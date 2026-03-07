@@ -1,0 +1,50 @@
+[0.465s] Invoking command in '/root/ros2_ws/src/robot_bringup_pkg': PYTHONPATH=/root/ros2_ws/build/robot_bringup_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/install/robot_bringup_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_bringup_pkg build --build-base /root/ros2_ws/build/robot_bringup_pkg/build install --record /root/ros2_ws/build/robot_bringup_pkg/install.log --single-version-externally-managed install_data
+[0.639s] running egg_info
+[0.639s] creating ../../build/robot_bringup_pkg/robot_bringup_pkg.egg-info
+[0.639s] writing ../../build/robot_bringup_pkg/robot_bringup_pkg.egg-info/PKG-INFO
+[0.640s] writing dependency_links to ../../build/robot_bringup_pkg/robot_bringup_pkg.egg-info/dependency_links.txt
+[0.640s] writing entry points to ../../build/robot_bringup_pkg/robot_bringup_pkg.egg-info/entry_points.txt
+[0.640s] writing requirements to ../../build/robot_bringup_pkg/robot_bringup_pkg.egg-info/requires.txt
+[0.640s] writing top-level names to ../../build/robot_bringup_pkg/robot_bringup_pkg.egg-info/top_level.txt
+[0.640s] writing manifest file '../../build/robot_bringup_pkg/robot_bringup_pkg.egg-info/SOURCES.txt'
+[0.642s] reading manifest file '../../build/robot_bringup_pkg/robot_bringup_pkg.egg-info/SOURCES.txt'
+[0.643s] writing manifest file '../../build/robot_bringup_pkg/robot_bringup_pkg.egg-info/SOURCES.txt'
+[0.643s] running build
+[0.643s] running build_py
+[0.643s] creating /root/ros2_ws/build/robot_bringup_pkg/build
+[0.643s] creating /root/ros2_ws/build/robot_bringup_pkg/build/lib
+[0.643s] creating /root/ros2_ws/build/robot_bringup_pkg/build/lib/robot_bringup_pkg
+[0.643s] copying robot_bringup_pkg/__init__.py -> /root/ros2_ws/build/robot_bringup_pkg/build/lib/robot_bringup_pkg
+[0.643s] running install
+[0.644s] running install_lib
+[0.644s] creating /root/ros2_ws/install/robot_bringup_pkg/lib/python3.10/site-packages/robot_bringup_pkg
+[0.645s] copying /root/ros2_ws/build/robot_bringup_pkg/build/lib/robot_bringup_pkg/__init__.py -> /root/ros2_ws/install/robot_bringup_pkg/lib/python3.10/site-packages/robot_bringup_pkg
+[0.645s] byte-compiling /root/ros2_ws/install/robot_bringup_pkg/lib/python3.10/site-packages/robot_bringup_pkg/__init__.py to __init__.cpython-310.pyc
+[0.645s] running install_data
+[0.646s] creating /root/ros2_ws/install/robot_bringup_pkg/share/ament_index
+[0.646s] creating /root/ros2_ws/install/robot_bringup_pkg/share/ament_index/resource_index
+[0.646s] creating /root/ros2_ws/install/robot_bringup_pkg/share/ament_index/resource_index/packages
+[0.646s] copying resource/robot_bringup_pkg -> /root/ros2_ws/install/robot_bringup_pkg/share/ament_index/resource_index/packages
+[0.646s] copying package.xml -> /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg
+[0.646s] creating /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg/launch
+[0.646s] copying launch/spawn_entity.launch.py -> /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg/launch
+[0.646s] copying launch/spawnArm.launch.py -> /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg/launch
+[0.646s] copying launch/rsp.launch.py -> /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg/launch
+[0.647s] creating /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg/meshes
+[0.647s] copying meshes/joint1_1.dae -> /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg/meshes
+[0.647s] copying meshes/link1_1.dae -> /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg/meshes
+[0.647s] copying meshes/joint1_2.dae -> /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg/meshes
+[0.647s] copying meshes/base_link.dae -> /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg/meshes
+[0.648s] copying meshes/link1_2.dae -> /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg/meshes
+[0.648s] creating /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg/urdf
+[0.648s] copying urdf/humanoidg.xacro -> /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg/urdf
+[0.648s] copying urdf/humanoid.xacro -> /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg/urdf
+[0.648s] copying urdf/humanoidt.xacro -> /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg/urdf
+[0.648s] creating /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg/config
+[0.648s] copying config/controller.yaml -> /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg/config
+[0.649s] copying config/gazebo_params.yaml -> /root/ros2_ws/install/robot_bringup_pkg/share/robot_bringup_pkg/config
+[0.649s] running install_egg_info
+[0.651s] Copying ../../build/robot_bringup_pkg/robot_bringup_pkg.egg-info to /root/ros2_ws/install/robot_bringup_pkg/lib/python3.10/site-packages/robot_bringup_pkg-0.0.0-py3.10.egg-info
+[0.652s] running install_scripts
+[0.673s] writing list of installed files to '/root/ros2_ws/build/robot_bringup_pkg/install.log'
+[0.720s] Invoked command in '/root/ros2_ws/src/robot_bringup_pkg' returned '0': PYTHONPATH=/root/ros2_ws/build/robot_bringup_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/install/robot_bringup_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_bringup_pkg build --build-base /root/ros2_ws/build/robot_bringup_pkg/build install --record /root/ros2_ws/build/robot_bringup_pkg/install.log --single-version-externally-managed install_data

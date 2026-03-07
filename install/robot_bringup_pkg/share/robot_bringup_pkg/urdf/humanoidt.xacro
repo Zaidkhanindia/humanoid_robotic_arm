@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<robot name="humanoid" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <material name="red">
+    <color rgba="1.0 0.0 0.0 0.0"/>
+  </material>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-8.926448812785309e-14 0.03149216949642246 -9.65125831201785e-18" rpy="0 0 0"/>
+      <mass value="3.698757808620283"/>
+      <inertia ixx="0.003707" iyy="0.005039" izz="0.003707" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.1  "/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="joint1_1">
+    <inertial>
+      <origin xyz="3.552713678800501e-17 -0.010282950806501252 -1.8810077740677782e-08" rpy="0 0 0"/>
+      <mass value="0.43346058895064377"/>
+      <inertia ixx="0.000521" iyy="0.000125" izz="0.000591" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
+      <geometry>
+        <box size="1 0.1 0.1  "/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.1  "/>
+        <!--<mesh filename="package://robot_bringup_pkg/meshes/joint1_1.stl" scale="0.001 0.001 0.001"/>-->
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="sroll_joint" type="continuous">
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="joint1_1"/>
+    <axis xyz="0.0 1.0 0.0"/>
+  </joint>
+
+</robot>

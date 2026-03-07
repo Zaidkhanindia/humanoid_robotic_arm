@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<robot name="humanoid" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:property name="path" value="file://$(find robot_bringup_pkg)/meshes/"/>
+  <material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+  <material name="grey">
+    <color rgba="0.7 0.7 0.7 1"/>
+  </material>
+
+  <link name="world"/>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-8.926448812785309e-14 0.03149216949642246 -9.65125831201785e-18" rpy="0 0 0"/>
+      <mass value="3.698757808620283"/>
+      <inertia ixx="0.003707" iyy="0.005039" izz="0.003707" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="${path}base_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="${path}base_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="joint1_1">
+    <inertial>
+      <origin xyz="3.552713678800501e-17 -0.010282950806501252 -1.8810077740677782e-08" rpy="0 0 0"/>
+      <mass value="0.43346058895064377"/>
+      <inertia ixx="0.000521" iyy="0.000125" izz="0.000591" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="${path}joint1_1.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="${path}joint1_1.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link1_1">
+    <inertial>
+      <origin xyz="0.09050006184828116 -0.09229898741606758 -0.00885690673276808" rpy="0 0 0"/>
+      <mass value="1.3355022477250316"/>
+      <inertia ixx="0.005115" iyy="0.001173" izz="0.005635" ixy="-0.0" iyz="0.000342" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0.03 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="${path}link1_1.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0.03 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="${path}link1_1.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="joint1_2">
+    <inertial>
+      <origin xyz="0.14950000260397794 0.21470066091867726 -0.01000001866106613" rpy="0 0 0"/>
+      <mass value="0.43346058895064377"/>
+      <inertia ixx="0.000521" iyy="0.000125" izz="0.000591" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0.2 -0.01" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="${path}joint1_2.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0.2 -0.01" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="${path}joint1_2.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link1_2">
+    <inertial>
+      <origin xyz="-0.0334999355477409 -0.11728237569088906 -0.008856906583756468" rpy="0 0 0"/>
+      <mass value="1.3355022477250316"/>
+      <inertia ixx="0.005115" iyy="0.001173" izz="0.005635" ixy="-0.0" iyz="0.000342" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0.255 -0.01" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="${path}link1_2.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0.255 -0.01" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="${path}link1_2.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="world_joint" type="fixed">
+    <origin xyz="0 0 0.5" rpy="0 0 0"/>
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+
+  <joint name="sroll_joint" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="joint1_1"/>
+    <axis xyz="0 -1 0"/>
+    <limit upper="3.14" lower="-1.60" effort="100" velocity="100"/>
+  </joint>
+
+  <joint name="spitch_joint" type="revolute">
+    <origin xyz="0 -0.03 0" rpy="0 0 0"/>
+    <parent link="joint1_1"/>
+    <child link="link1_1"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <limit upper="3.14" lower="-3.14" effort="100" velocity="100"/>
+  </joint>
+
+  <joint name="eroll_joint" type="revolute">
+    <origin xyz="0 -0.18 0.01" rpy="0 0 0"/>
+    <parent link="link1_1"/>
+    <child link="joint1_2"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit upper="1.4" lower="-1.4" effort="100" velocity="100"/>
+  </joint>
+
+  <joint name="epitch_joint" type="revolute">
+    <origin xyz="0 -0.055 0" rpy="0 0 0"/>
+    <parent link="joint1_2"/>
+    <child link="link1_2"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <limit upper="2.093" lower="0" effort="100" velocity="100"/>
+  </joint>
+
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+
+    <joint name="sroll_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="spitch_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="eroll_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="epitch_joint">
+      <command_interface name="position"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+
+  <gazebo>
+      <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+        <robot_param>robot_description</robot_param>
+        <parameters>$(find robot_bringup_pkg)/config/controller.yaml</parameters>
+      </plugin>
+  </gazebo>
+</robot>
